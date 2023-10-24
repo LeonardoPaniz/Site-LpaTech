@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+//! CUSTOM COLORS ----------------
+
+$principal_color: #6E2AF5;
+$secundary_color: #E94B27;
+$tertiary_color: #FFAE34;
+$black_color: #1f1b18;
+$white_color: #ffffff;
+
+:root {
+  --principal-color: #{$principal_color};
+  --secundary-color: #{$secundary_color};
+  --tertiary-color: #{$tertiary_color};
+  --black-color: #{$black_color};
+  --white-color: #{$white_color};
+}
+
+//! ----------------------------------
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px; /* Remover margens padrão */
+  padding: 0px; /* Remover preenchimento padrão */
+}
