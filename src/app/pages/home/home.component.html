@@ -14,7 +14,7 @@
         <header id="header">
           <div class="container-header">
             <div class="flex">
-              <a href="#"><img src="../assets/logo.png" alt="LPA-TCH | Soluções digitais."></a>
+              <a href="#"><img src="../assets/logo.png" alt="LPA-TECH | Soluções digitais."></a>
               <nav>
                 <ul>
                   <li><a href="#">HOME</a></li>
@@ -30,13 +30,13 @@
           <h1 class="h1-parallax">Bem vindo a LPA-TECH | <strong class="strong-secundary-color">Soluções
               digitais.</strong></h1>
           <p class="white-txt">Bem-vindo à LPA-TECH, explore nossas inovações e juntos vamos transformar o mundo.</p>
-          <button class="btn-secundary-color"><a href="https://xvideos.com">Fazer orçamento</a></button>
+          <a href="https://xvideos.com"><button class="btn-secundary-color">Fazer orçamento</button></a>
         </div>
         <div class="shadow"></div>
       </section>
 
       <section class="module content">
-        <div class="container">
+        <div class="proposito-text">
           <h2><strong class="strong-secundary-color">NOSSO PROPÓSITO</strong></h2>
           <p>
             Na LPA Tech, acreditamos que a tecnologia é uma ferramenta poderosa para impulsionar o crescimento e o
@@ -49,9 +49,54 @@
           </p>
           <a target="_blank" href="https://github.com/LeonardoEnterprise"><button class="btn-secundary-color">Conhecer a empresa</button></a>
           </div>
-          <div class="imgs">
-            <img class="valores" src="../../../assets/lema.svg" alt="Você é nossa prioridade!">
+          <div class="video">
+            <!-- <img class="valores" src="../../../assets/lema.svg" alt="Você é nossa prioridade!"> -->
+            <video class="video-institucional" src="../../../assets/LPA MOVIE.mp4" alt="Conheça a LPA-TECH" controls></video>
           </div>
+      </section>
+
+      <section class="portfolio-section module parallax parallax-2">
+        <div class="projects">
+            <div class="portfolio-iphone" [@contentChange]="currentState">
+              <img [src]="portfolioItems[currentIndex].screenshot" alt="Screenshot do site">
+            </div>
+            <div class="portfolio-description" >
+            <div class="content-portfolio" [@contentChange]="currentState">
+              <h2><strong class="strong-secundary-color">{{ portfolioItems[currentIndex].title }}</strong></h2>
+              <p>{{ portfolioItems[currentIndex].description }}</p>
+              <a target="_blank" href="{{portfolioItems[currentIndex].url}}"><button class="btn-secundary-color"> Visitar o site</button></a>
+            </div>
+            <div class="portfolio-controls">
+              <label *ngFor="let item of portfolioItems; let i = index">
+                <input type="radio" [value]="i" [(ngModel)]="currentIndex" (change)="handleRadioSelection(i)">
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="shadow"></div>
+      </section>
+
+
+      <section id="contact" class="module">
+        <div class="contact-container">
+          <h2><strong class="strong-secundary-color">ENTRE EM CONTATO</strong></h2>
+          <p>Estamos ansiosos para atendê-lo. Deixe-nos ajudar a transformar suas necessidades em soluções</p>
+          <form id="contact-form" action="seu-script-de-processamento.php" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="cell">Telefone:</label>
+            <input type="tel" id="cell" name="cell" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" placeholder="Deixe um breve texto explicando como seria o seu projeto e como podemos melhor lhe atender, conte-nos um pouco sobre sua empresa." required></textarea>
+            <a href="https://xvideos.com"><button class="btn-secundary-color" type="submit">Enviar email</button></a>
+            <a href="https://xvideos.com"><button class="green-btn" type="submit">Chamar no whatsapp</button></a>
+          </form>
+        </div>
       </section>
 
     </main>
