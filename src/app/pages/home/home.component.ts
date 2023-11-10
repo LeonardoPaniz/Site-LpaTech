@@ -1,6 +1,7 @@
 import { LoadingService } from './../../service/loading.service';
-import { Component, HostListener, Renderer2, ElementRef, OnInit } from '@angular/core';
+import { Component, HostListener, Renderer2, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { NgForm } from '@angular/forms';
 
 // import { Observable } from 'rxjs/internal/Observable';
 
@@ -23,6 +24,13 @@ export class HomeComponent implements OnInit {
   currentIndex: number = 0;
   currentState: string = 'in'
 
+  @ViewChild('contactForm', { static: false }) contactForm: NgForm | undefined;
+  nome: string = '';
+  email: string = '';
+  telefone: string = '';
+  mensagemUsuario: string = '';
+
+
   portfolioItems: any[]  = [
     {
       title: 'Site Friovel',
@@ -43,6 +51,49 @@ export class HomeComponent implements OnInit {
       screenshot: '../../../assets/mockups/linktree-mockup.svg',
     },
     // Adicione mais projetos conforme necessário
+  ];
+
+  faqLpaTech: { pergunta: string, resposta: string }[] = [
+    {
+      pergunta: 'O que é a LPA Tech?',
+      resposta: 'A LPA Tech é uma empresa brasileira de tecnologia especializada no desenvolvimento de soluções inovadoras, desde sites e aplicativos até consultoria em TI.',
+    },
+    {
+      pergunta: 'Quais serviços a LPA Tech oferece?',
+      resposta: 'Oferecemos uma variedade de serviços, incluindo desenvolvimento web e mobile, consultoria em tecnologia da informação, design de interface, e soluções personalizadas para atender às necessidades específicas de nossos clientes.',
+    },
+    {
+      pergunta: 'Como posso entrar em contato com a LPA Tech?',
+      resposta: 'Você pode nos contatar através do formulário de contato em nosso site, enviar um e-mail para [endereço de e-mail] ou nos chamar pelos números de telefone listados em nossa página de contato.',
+    },
+    {
+      pergunta: 'A LPA Tech trabalha apenas com empresas grandes?',
+      resposta: 'Não, atendemos empresas de todos os tamanhos. Desde pequenos negócios até grandes corporações, estamos comprometidos em fornecer soluções de alta qualidade que impulsionem o sucesso de nossos clientes.',
+    },
+    {
+      pergunta: 'Quanto tempo leva para desenvolver um site ou aplicativo com a LPA Tech?',
+      resposta: 'O tempo de desenvolvimento pode variar dependendo da complexidade do projeto. Procuramos entender as necessidades de cada cliente para fornecer prazos realistas. Para obter uma estimativa mais precisa, entre em contato conosco para discutir os detalhes do seu projeto.',
+    },
+    {
+      pergunta: 'A LPA Tech oferece suporte pós-lançamento?',
+      resposta: 'Sim, fornecemos suporte contínuo após o lançamento de projetos. Estamos comprometidos em garantir que nossos clientes tenham um funcionamento suave e, se surgirem problemas, nossa equipe está pronta para oferecer assistência rápida e eficiente.',
+    },
+    {
+      pergunta: 'A LPA Tech trabalha com desenvolvimento de e-commerce?',
+      resposta: 'Sim, oferecemos serviços de desenvolvimento de e-commerce, incluindo criação de lojas virtuais, integração de sistemas de pagamento e otimização para uma experiência de compra eficiente.',
+    },
+    {
+      pergunta: 'A LPA Tech realiza parcerias ou colaborações?',
+      resposta: 'Estamos sempre abertos a parcerias e colaborações. Se você tiver uma proposta ou ideia, entre em contato conosco para discutir como podemos trabalhar juntos.',
+    },
+    {
+      pergunta: 'A LPA Tech oferece soluções personalizadas?',
+      resposta: 'Sim, entendemos que cada cliente é único. Trabalhamos de perto com nossos clientes para entender suas necessidades específicas e fornecer soluções personalizadas que atendam aos seus objetivos.',
+    },
+    {
+      pergunta: 'A LPA Tech está envolvida em projetos de responsabilidade social?',
+      resposta: 'Sim, a LPA Tech acredita em contribuir para a comunidade. Participamos ativamente de projetos de responsabilidade social, buscando fazer uma diferença positiva na sociedade através da tecnologia.',
+    },
   ];
 
   constructor(private renderer: Renderer2, private el: ElementRef, private LoadingService: LoadingService) {}
@@ -71,4 +122,25 @@ handleRadioSelection(index: number) {
   }, 300); // Ajuste o tempo de acordo com a duração da animação
 }
 
+onSubmit(){
+  this.clearForm()
+}
+
+sendEmailMessage(){
+
+}
+
+sendWhatsAppMessage() {
+  const mensagem = `Heey me chamo *${this.nome}*.\nE-mail para contato: *${this.email}*\nTelefone para contato: *${this.telefone}*.\n\n*Entro em contato para falar sobre:*\n${this.mensagemUsuario}`;
+  const numeroTelefone = '5546999831857';
+  const linkWhatsapp = `https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${encodeURIComponent(mensagem)}`;
+  window.open(linkWhatsapp);
+  this.clearForm()
+}
+
+clearForm() {
+  if (this.contactForm) {
+    this.contactForm.reset();
+  }
+}
 }
