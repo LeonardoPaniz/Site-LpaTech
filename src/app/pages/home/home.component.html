@@ -93,7 +93,7 @@
 
             <label for="message">Mensagem:</label>
             <textarea id="message" name="message" placeholder="Descreva detalhadamente o motivo do contato." [(ngModel)]="mensagemUsuario" required></textarea>
-            <a (click)="sendEmailMessage()"><button class="btn-secundary-color" type="submit">Enviar email</button></a>
+            <a (click)="sendEmailMessage()" href="suporte@lpatech.com.br"><button class="btn-secundary-color" type="submit">Enviar email</button></a>
             <a (click)="sendWhatsAppMessage()"><button class="green-btn" type="submit">Chamar no whatsapp</button></a>
           </form>
         </div>
@@ -119,23 +119,30 @@
         </div>
       </section> -->
 
-      <section>
-        <div class="faq-div">
-          <h1>DÚVIDAS FREQUENTES</h1>
-          <div class="faq-group" *ngFor="let duvida of faqLpaTech">
+      <section id="faq" class="module">
+        <div class="faq-container">
+          <div class="faq-div">
+            <h2><strong class="strong-secundary-color">ALGUMA DUVIDA?</strong></h2>
+            <div class="faq-group" *ngFor="let duvida of faqLpaTech">
+              <div class="pergunta">
+                <h3></h3>
+              </div>
+              <div class="resposta">
 
+              </div>
+            </div>
+            <div class="contato">
+              <a href=""><button>Entrar em contato</button></a>
+            </div>
           </div>
-          <div class="pergunta">
-
-          </div>
-          <div class="resposta">
-
-          </div>
-          <div class="contato">
-            <a href=""><button>Entrar em contato</button></a>
+          <div class="more-faq">
+            <h2>Possui uma duvida? entre em contato.</h2>
           </div>
         </div>
       </section>
+
+      <a href="https://www.instagram.com/share?url=https://lpatech.com.br/homeE&caption=Sua+legenda+aqui&media=https://img.freepik.com/fotos-premium/o-ceu-da-paisagem-do-arco-iris-refletiu-a-imagem-de-fundo-da-natureza-da-agua-ai-gerou-a-arte_856480-1354.jpg" target="_blank">Compartilhar no Instagram</a>
+
 
     </main>
   </div>
