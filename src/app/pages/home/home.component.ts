@@ -53,46 +53,46 @@ export class HomeComponent implements OnInit {
     // Adicione mais projetos conforme necessário
   ];
 
-  faqLpaTech: { pergunta: string, resposta: string }[] = [
-    {
-      pergunta: 'O que é a LPA Tech?',
-      resposta: 'A LPA Tech é uma empresa brasileira de tecnologia especializada no desenvolvimento de soluções inovadoras, desde sites e aplicativos até consultoria em TI.',
-    },
+  faqLpaTech: { pergunta: string, resposta: string, isClicked: boolean }[] = [
+    // {
+    //   pergunta: 'O que é a LPA Tech?',
+    //   resposta: 'A LPA Tech é uma empresa brasileira de tecnologia especializada no desenvolvimento de soluções inovadoras, desde sites e aplicativos até consultoria em TI.', isClicked: false,
+    // },
     {
       pergunta: 'Quais serviços a LPA Tech oferece?',
-      resposta: 'Oferecemos uma variedade de serviços, incluindo desenvolvimento web e mobile, consultoria em tecnologia da informação, design de interface, e soluções personalizadas para atender às necessidades específicas de nossos clientes.',
+      resposta: 'Oferecemos uma variedade de serviços, incluindo desenvolvimento web e mobile, consultoria em tecnologia da informação, design de interface, e soluções personalizadas para atender às necessidades específicas de nossos clientes.', isClicked: false,
     },
-    {
-      pergunta: 'Como posso entrar em contato com a LPA Tech?',
-      resposta: 'Você pode nos contatar através do formulário de contato em nosso site, enviar um e-mail para [endereço de e-mail] ou nos chamar pelos números de telefone listados em nossa página de contato.',
-    },
+    // {
+    //   pergunta: 'Como posso entrar em contato com a LPA Tech?',
+    //   resposta: 'Você pode nos contatar através do formulário de contato em nosso site, enviar um e-mail para [endereço de e-mail] ou nos chamar pelos números de telefone listados em nossa página de contato.', isClicked: false,
+    // },
     {
       pergunta: 'A LPA Tech trabalha apenas com empresas grandes?',
-      resposta: 'Não, atendemos empresas de todos os tamanhos. Desde pequenos negócios até grandes corporações, estamos comprometidos em fornecer soluções de alta qualidade que impulsionem o sucesso de nossos clientes.',
+      resposta: 'Não, atendemos empresas de todos os tamanhos. Desde pequenos negócios até grandes corporações, estamos comprometidos em fornecer soluções de alta qualidade que impulsionem o sucesso de nossos clientes.', isClicked: false,
     },
     {
       pergunta: 'Quanto tempo leva para desenvolver um site ou aplicativo com a LPA Tech?',
-      resposta: 'O tempo de desenvolvimento pode variar dependendo da complexidade do projeto. Procuramos entender as necessidades de cada cliente para fornecer prazos realistas. Para obter uma estimativa mais precisa, entre em contato conosco para discutir os detalhes do seu projeto.',
+      resposta: 'O tempo de desenvolvimento pode variar dependendo da complexidade do projeto. Procuramos entender as necessidades de cada cliente para fornecer prazos realistas. Para obter uma estimativa mais precisa, entre em contato conosco para discutir os detalhes do seu projeto.', isClicked: false,
     },
     {
       pergunta: 'A LPA Tech oferece suporte pós-lançamento?',
-      resposta: 'Sim, fornecemos suporte contínuo após o lançamento de projetos. Estamos comprometidos em garantir que nossos clientes tenham um funcionamento suave e, se surgirem problemas, nossa equipe está pronta para oferecer assistência rápida e eficiente.',
-    },
-    {
-      pergunta: 'A LPA Tech trabalha com desenvolvimento de e-commerce?',
-      resposta: 'Sim, oferecemos serviços de desenvolvimento de e-commerce, incluindo criação de lojas virtuais, integração de sistemas de pagamento e otimização para uma experiência de compra eficiente.',
-    },
-    {
-      pergunta: 'A LPA Tech realiza parcerias ou colaborações?',
-      resposta: 'Estamos sempre abertos a parcerias e colaborações. Se você tiver uma proposta ou ideia, entre em contato conosco para discutir como podemos trabalhar juntos.',
+      resposta: 'Sim, fornecemos suporte contínuo após o lançamento de projetos. Estamos comprometidos em garantir que nossos clientes tenham um funcionamento suave e, se surgirem problemas, nossa equipe está pronta para oferecer assistência rápida e eficiente.', isClicked: false,
     },
     {
       pergunta: 'A LPA Tech oferece soluções personalizadas?',
-      resposta: 'Sim, entendemos que cada cliente é único. Trabalhamos de perto com nossos clientes para entender suas necessidades específicas e fornecer soluções personalizadas que atendam aos seus objetivos.',
+      resposta: 'Sim, entendemos que cada cliente é único. Trabalhamos de perto com nossos clientes para entender suas necessidades específicas e fornecer soluções personalizadas que atendam aos seus objetivos.', isClicked: false,
     },
+    // {
+    //   pergunta: 'A LPA Tech trabalha com desenvolvimento de e-commerce?',
+    //   resposta: 'Sim, oferecemos serviços de desenvolvimento de e-commerce, incluindo criação de lojas virtuais, integração de sistemas de pagamento e otimização para uma experiência de compra eficiente.', isClicked: false,
+    // },
+    // {
+    //   pergunta: 'A LPA Tech realiza parcerias ou colaborações?',
+    //   resposta: 'Estamos sempre abertos a parcerias e colaborações. Se você tiver uma proposta ou ideia, entre em contato conosco para discutir como podemos trabalhar juntos.', isClicked: false,
+    // },
     {
       pergunta: 'A LPA Tech está envolvida em projetos de responsabilidade social?',
-      resposta: 'Sim, a LPA Tech acredita em contribuir para a comunidade. Participamos ativamente de projetos de responsabilidade social, buscando fazer uma diferença positiva na sociedade através da tecnologia.',
+      resposta: 'Sim, a LPA Tech acredita em contribuir para a comunidade. Participamos ativamente de projetos de responsabilidade social, buscando fazer uma diferença positiva na sociedade através da tecnologia.', isClicked: false,
     },
   ];
 
@@ -142,5 +142,15 @@ clearForm() {
   if (this.contactForm) {
     this.contactForm.reset();
   }
+}
+
+toggleAnswer(perguntaClicada: any) {
+  this.faqLpaTech.forEach((pergunta) => {
+    if (pergunta !== perguntaClicada) {
+      pergunta.isClicked = false;
+    }
+  });
+
+  perguntaClicada.isClicked = !perguntaClicada.isClicked;
 }
 }
