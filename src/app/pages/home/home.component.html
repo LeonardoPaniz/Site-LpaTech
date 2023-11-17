@@ -38,13 +38,12 @@
         <div class="proposito-text">
           <h2><strong class="strong-secundary-color">NOSSO PROPÓSITO</strong></h2>
           <p>
-            Na LPA Tech, acreditamos que a tecnologia é uma ferramenta poderosa para impulsionar o crescimento e o
-            sucesso dos negócios. Com anos de experiência no setor de desenvolvimento web e de software, nos dedicamos a
-            criar soluções sob medida para atender às necessidades únicas de nossos clientes. <br><br>
+            Na LPA Tech acreditamos que a tecnologia é uma ferramenta poderosa para impulsionar o crescimento e o sucesso dos negócios. Com anos de experiência no setor de desenvolvimento web e de software nos dedicamos a criar soluções, sob medida, para atender as necessidades únicas de nossos clientes.
 
-            Nossa equipe é formada por desenvolvedores, designers e especialistas em tecnologia apaixonados por inovação
-            e excelência. Trabalhamos em estreita colaboração com nossos clientes para entender suas metas e objetivos,
-            a fim de fornecer soluções personalizadas que atendam às suas expectativas e superem suas necessidades.
+            <br>
+            <br>
+
+            Nossa equipe é formada por desenvolvedores, designers e especialistas em tecnologia apaixonados por inovação e excelência. Trabalhamos em estreita colaboração com nossos clientes para entender suas metas e fornecer soluções personalizadas que atendam as suas expectativas e superem suas necessidades.
           </p>
           <a target="_blank" href="https://github.com/LeonardoEnterprise"><button class="btn-secundary-color">Conhecer a empresa</button></a>
           </div>
@@ -63,7 +62,7 @@
             <div class="content-portfolio" [@contentChange]="currentState">
               <h2><strong class="strong-secundary-color">{{ portfolioItems[currentIndex].title }}</strong></h2>
               <p>{{ portfolioItems[currentIndex].description }}</p>
-              <a target="_blank" href="{{portfolioItems[currentIndex].url}}"><button class="btn-secundary-color"> Visitar o site</button></a>
+              <a target="_blank" href="{{portfolioItems[currentIndex].url}}"><button class="btn-secundary-color">Visitar o site</button></a>
             </div>
             <div class="portfolio-controls">
               <label *ngFor="let item of portfolioItems; let i = index">
@@ -79,7 +78,7 @@
       <section id="contact" class="module" >
         <div class="contact-container">
           <h2><strong class="strong-secundary-color">ENTRE EM CONTATO</strong></h2>
-          <p>Estamos ansiosos para atendê-lo. Deixe-nos ajudar a transformar suas necessidades em soluções</p>
+          <p>Estamos ansiosos para atendê-lo. Deixe-nos ajudar a transformar suas necessidades em <strong>soluções</strong></p>
           <form id="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm" method="post">
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" placeholder="Nome Sobrenome" [(ngModel)]="nome" required>
@@ -91,9 +90,9 @@
             <input type="tel" id="cell" name="cell" placeholder="DDD+Numero Do Telefone" [(ngModel)]="telefone" required>
 
             <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" placeholder="Descreva detalhadamente o motivo do contato." [(ngModel)]="mensagemUsuario" required></textarea>
+            <textarea id="message" name="message" placeholder="Descreva objetivamente o motivo do contato." [(ngModel)]="mensagemUsuario" required></textarea>
             <a (click)="sendEmailMessage()"><button class="btn-secundary-color" type="submit">Enviar email</button></a>
-            <a (click)="sendWhatsAppMessage()"><button class="green-btn" type="submit">Chamar no whatsapp</button></a>
+            <a (click)="sendWhatsAppMessage()"><button class="green-btn" type="submit">Chamar no WhatsApp</button></a>
           </form>
         </div>
       </section>
@@ -121,7 +120,7 @@
       <section id="faq" class="module">
         <div class="faq-container">
           <div class="faq-div">
-            <h2><strong class="strong-secundary-color">ALGUMA DUVIDA?</strong></h2>
+            <h2><strong class="strong-secundary-color">ALGUMA DÚVIDA?</strong></h2>
             <div class="faq-group" *ngFor="let pergunta of faqLpaTech" (click)="toggleAnswer(pergunta)" [class.clicked]="pergunta.isClicked">
               <div class="pergunta">
                 <h3>{{pergunta.pergunta}}</h3>

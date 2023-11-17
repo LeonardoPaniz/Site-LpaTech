@@ -364,7 +364,7 @@ label {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 0.5fr;
-    align-items: center;
+    align-items: flex-start;
     gap: 2rem;
 
     .faq-div {
@@ -378,6 +378,8 @@ label {
         .pergunta {
           display: flex;
           align-items: center;
+          -webkit-user-select: none;
+          user-select: none;
         }
         .resposta {
           margin-top: 1rem;
@@ -409,7 +411,7 @@ label {
       text-align: center;
       background-color: #e8e8e8;
       border-radius: 16px;
-      position: relative;
+
 
       .background {
         position: absolute;

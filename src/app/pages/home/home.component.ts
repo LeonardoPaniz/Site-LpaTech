@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
     // },
     {
       pergunta: 'Quais serviços a LPA Tech oferece?',
-      resposta: 'Oferecemos uma variedade de serviços, incluindo desenvolvimento web e mobile, consultoria em tecnologia da informação, design de interface, e soluções personalizadas para atender às necessidades específicas de nossos clientes.', isClicked: false,
+      resposta: 'Oferecemos uma variedade de serviços como desenvolvimento web e mobile, consultoria em tecnologia da informação, design de interface e soluções personalizadas para atender as necessidades específicas de nossos clientes.', isClicked: false,
     },
     // {
     //   pergunta: 'Como posso entrar em contato com a LPA Tech?',
@@ -68,19 +68,19 @@ export class HomeComponent implements OnInit {
     // },
     {
       pergunta: 'A LPA Tech trabalha apenas com empresas grandes?',
-      resposta: 'Não, atendemos empresas de todos os tamanhos. Desde pequenos negócios até grandes corporações, estamos comprometidos em fornecer soluções de alta qualidade que impulsionem o sucesso de nossos clientes.', isClicked: false,
+      resposta: 'Não, atendemos empresas de todos os tamanhos. Desde pequenos negócios até grandes corporações estamos comprometidos em fornecer soluções, de alta qualidade, que impulsionem o sucesso de nossos clientes.', isClicked: false,
     },
     {
       pergunta: 'Quanto tempo leva para desenvolver um site ou aplicativo com a LPA Tech?',
-      resposta: 'O tempo de desenvolvimento pode variar dependendo da complexidade do projeto. Procuramos entender as necessidades de cada cliente para fornecer prazos realistas. Para obter uma estimativa mais precisa, entre em contato conosco para discutir os detalhes do seu projeto.', isClicked: false,
+      resposta: 'O tempo de desenvolvimento pode variar dependendo da complexidade do projeto. Procuramos entender as necessidades de cada cliente para fornecer prazos realistas. Para obter uma estimativa mais precisa entre em contato conosco, para discutir os detalhes do seu projeto.', isClicked: false,
     },
     {
       pergunta: 'A LPA Tech oferece suporte pós-lançamento?',
-      resposta: 'Sim, fornecemos suporte contínuo após o lançamento de projetos. Estamos comprometidos em garantir que nossos clientes tenham um funcionamento suave e, se surgirem problemas, nossa equipe está pronta para oferecer assistência rápida e eficiente.', isClicked: false,
+      resposta: 'Sim, fornecemos suporte contínuo após o lançamento de projetos. Estamos comprometidos em garantir que nossos clientes tenham uma experiencia suave e livre de problemas, se surgirem problemas, nossa equipe estará sempre pronta para oferecer assistência rápida e eficiente.', isClicked: false,
     },
     {
       pergunta: 'A LPA Tech oferece soluções personalizadas?',
-      resposta: 'Sim, entendemos que cada cliente é único. Trabalhamos de perto com nossos clientes para entender suas necessidades específicas e fornecer soluções personalizadas que atendam aos seus objetivos.', isClicked: false,
+      resposta: 'Sim, entendemos que cada cliente é único. Trabalhamos de perto com nossos clientes, entendendo suas necessidades específicas e fornecendo soluções personalizadas para atingirem seus objetivos.', isClicked: false,
     },
     // {
     //   pergunta: 'A LPA Tech trabalha com desenvolvimento de e-commerce?',
@@ -92,7 +92,7 @@ export class HomeComponent implements OnInit {
     // },
     {
       pergunta: 'A LPA Tech está envolvida em projetos de responsabilidade social?',
-      resposta: 'Sim, a LPA Tech acredita em contribuir para a comunidade. Participamos ativamente de projetos de responsabilidade social, buscando fazer uma diferença positiva na sociedade através da tecnologia.', isClicked: false,
+      resposta: 'Sim, a LPA Tech acredita em contribuir à comunidade. Participamos ativamente de projetos de responsabilidade social, buscando fazer uma diferença positiva na sociedade através da tecnologia.', isClicked: false,
     },
   ];
 
