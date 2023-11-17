@@ -403,6 +403,8 @@ label {
     }
 
     .more-faq {
+      position: relative;
+      overflow: hidden; /* Adicione overflow: hidden para esconder o overflow do SVG */
       padding: 56px;
       flex: 1;
       display: flex;
@@ -413,14 +415,13 @@ label {
       background-color: #e8e8e8;
       border-radius: 16px;
 
-
       .background {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-size: cover; /* ou contain, dependendo do comportamento desejado */
+        background-size: cover;
       }
       .conteudo {
         display: flex;
@@ -437,60 +438,14 @@ label {
           display: flex;
           overflow: hidden;
           margin-bottom: 1rem;
-
+          outline: solid 0.4rem;
+          outline-style: outset;
+          outline-color: #e94b27;
           img {
             max-width: 100%;
           }
         }
       }
     }
-
-    defs clipPath {
-      rect {
-        width: 100%;
-        height: 100%;
-        fill: white;
-      }
-    }
-
-    // .more-faq {
-    //   position: relative;
-    //   align-items: center;
-    //   padding: 56px;
-    //   flex: 1;
-    //   display: flex;
-    //   flex-direction: column;
-    //   text-align: center;
-    //   background-color: #e8e8e8;
-    //   border-radius: 16px;
-    // }
-
-    // .background {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-size: cover; /* ou contain, dependendo do comportamento desejado */
-    // }
-
-    // .conteudo {
-    //   z-index: 1; /* Garante que o conteúdo apareça sobreposta ao fundo */
-    // }
-
-    // .faq-avatar {
-    //   width: 90px;
-    //   height: 90px;
-    //   border-radius: 999px;
-    //   justify-content: center;
-    //   align-items: center;
-    //   display: flex;
-    //   overflow: hidden;
-    //   margin-bottom: 1rem;
-
-    //   img {
-    //     max-width: 100%;
-    //   }
-    // }
   }
 }

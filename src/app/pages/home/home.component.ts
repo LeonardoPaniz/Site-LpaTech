@@ -1,9 +1,20 @@
 import { LoadingService } from './../../service/loading.service';
-import { Component, HostListener, Renderer2, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import {
+  Component,
+  HostListener,
+  Renderer2,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 import { NgForm } from '@angular/forms';
-
-// import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +33,7 @@ export class HomeComponent implements OnInit {
   title = 'Site-LpaTech';
   selectedOption: string = '';
   currentIndex: number = 0;
-  currentState: string = 'in'
+  currentState: string = 'in';
 
   @ViewChild('contactForm', { static: false }) contactForm: NgForm | undefined;
   nome: string = '';
@@ -30,8 +41,7 @@ export class HomeComponent implements OnInit {
   telefone: string = '';
   mensagemUsuario: string = '';
 
-
-  portfolioItems: any[]  = [
+  portfolioItems: any[] = [
     {
       title: 'Site Friovel',
       description: 'Temos o orgulho de trabalhar em parceria com a Friovel para desenvolver um site que represente fielmente seus valores e compromisso com a qualidade. Nossa missão é traduzir a história e a excelência da Friovel em uma presença online que destaque sua dedicação aos clientes e a oferta de produtos de alta qualidade. Acompanhe nosso portfólio para conhecer os projetos em que colaboramos, e junte-se a nós nessa jornada de excelência e inovação.',
@@ -50,107 +60,136 @@ export class HomeComponent implements OnInit {
       url: 'https://leonardopaniz.netlify.app/',
       screenshot: '../../../assets/mockups/linktree-mockup.svg',
     },
-    // Adicione mais projetos conforme necessário
   ];
 
-  faqLpaTech: { pergunta: string, resposta: string, isClicked: boolean }[] = [
-    // {
-    //   pergunta: 'O que é a LPA Tech?',
-    //   resposta: 'A LPA Tech é uma empresa brasileira de tecnologia especializada no desenvolvimento de soluções inovadoras, desde sites e aplicativos até consultoria em TI.', isClicked: false,
-    // },
+  faqLpaTech: { pergunta: string; resposta: string; isClicked: boolean }[] = [
     {
       pergunta: 'Quais serviços a LPA Tech oferece?',
-      resposta: 'Oferecemos uma variedade de serviços como desenvolvimento web e mobile, consultoria em tecnologia da informação, design de interface e soluções personalizadas para atender as necessidades específicas de nossos clientes.', isClicked: false,
+      resposta:
+        'Oferecemos uma variedade de serviços como desenvolvimento web e mobile, consultoria em tecnologia da informação, design de interface e soluções personalizadas para atender as necessidades específicas de nossos clientes.',
+      isClicked: false,
     },
-    // {
-    //   pergunta: 'Como posso entrar em contato com a LPA Tech?',
-    //   resposta: 'Você pode nos contatar através do formulário de contato em nosso site, enviar um e-mail para [endereço de e-mail] ou nos chamar pelos números de telefone listados em nossa página de contato.', isClicked: false,
-    // },
     {
       pergunta: 'A LPA Tech trabalha apenas com empresas grandes?',
-      resposta: 'Não, atendemos empresas de todos os tamanhos. Desde pequenos negócios até grandes corporações estamos comprometidos em fornecer soluções, de alta qualidade, que impulsionem o sucesso de nossos clientes.', isClicked: false,
+      resposta:
+        'Não, atendemos empresas de todos os tamanhos. Desde pequenos negócios até grandes corporações estamos comprometidos em fornecer soluções, de alta qualidade, que impulsionem o sucesso de nossos clientes.',
+      isClicked: false,
     },
     {
-      pergunta: 'Quanto tempo leva para desenvolver um site ou aplicativo com a LPA Tech?',
-      resposta: 'O tempo de desenvolvimento pode variar dependendo da complexidade do projeto. Procuramos entender as necessidades de cada cliente para fornecer prazos realistas. Para obter uma estimativa mais precisa entre em contato conosco, para discutir os detalhes do seu projeto.', isClicked: false,
+      pergunta:
+        'Quanto tempo leva para desenvolver um site ou aplicativo com a LPA Tech?',
+      resposta:
+        'O tempo de desenvolvimento pode variar dependendo da complexidade do projeto. Procuramos entender as necessidades de cada cliente para fornecer prazos realistas. Para obter uma estimativa mais precisa entre em contato conosco, para discutir os detalhes do seu projeto.',
+      isClicked: false,
     },
     {
       pergunta: 'A LPA Tech oferece suporte pós-lançamento?',
-      resposta: 'Sim, fornecemos suporte contínuo após o lançamento de projetos. Estamos comprometidos em garantir que nossos clientes tenham uma experiencia suave e livre de problemas, se surgirem problemas, nossa equipe estará sempre pronta para oferecer assistência rápida e eficiente.', isClicked: false,
+      resposta:
+        'Sim, fornecemos suporte contínuo após o lançamento de projetos. Estamos comprometidos em garantir que nossos clientes tenham uma experiencia suave e livre de problemas, se surgirem problemas, nossa equipe estará sempre pronta para oferecer assistência rápida e eficiente.',
+      isClicked: false,
     },
     {
       pergunta: 'A LPA Tech oferece soluções personalizadas?',
-      resposta: 'Sim, entendemos que cada cliente é único. Trabalhamos de perto com nossos clientes, entendendo suas necessidades específicas e fornecendo soluções personalizadas para atingirem seus objetivos.', isClicked: false,
+      resposta:
+        'Sim, entendemos que cada cliente é único. Trabalhamos de perto com nossos clientes, entendendo suas necessidades específicas e fornecendo soluções personalizadas para atingirem seus objetivos.',
+      isClicked: false,
     },
-    // {
-    //   pergunta: 'A LPA Tech trabalha com desenvolvimento de e-commerce?',
-    //   resposta: 'Sim, oferecemos serviços de desenvolvimento de e-commerce, incluindo criação de lojas virtuais, integração de sistemas de pagamento e otimização para uma experiência de compra eficiente.', isClicked: false,
-    // },
-    // {
-    //   pergunta: 'A LPA Tech realiza parcerias ou colaborações?',
-    //   resposta: 'Estamos sempre abertos a parcerias e colaborações. Se você tiver uma proposta ou ideia, entre em contato conosco para discutir como podemos trabalhar juntos.', isClicked: false,
-    // },
     {
-      pergunta: 'A LPA Tech está envolvida em projetos de responsabilidade social?',
-      resposta: 'Sim, a LPA Tech acredita em contribuir à comunidade. Participamos ativamente de projetos de responsabilidade social, buscando fazer uma diferença positiva na sociedade através da tecnologia.', isClicked: false,
+      pergunta:
+        'A LPA Tech está envolvida em projetos de responsabilidade social?',
+      resposta:
+        'Sim, a LPA Tech acredita em contribuir à comunidade. Participamos ativamente de projetos de responsabilidade social, buscando fazer uma diferença positiva na sociedade através da tecnologia.',
+      isClicked: false,
     },
   ];
 
-  constructor(private renderer: Renderer2, private el: ElementRef, private LoadingService: LoadingService) {}
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+    private loadingService: LoadingService
+  ) { }
+
   ngOnInit(): void {
-    this.LoadingService.show();
+    this.loadingService.show();
     setTimeout(() => {
-      this.LoadingService.hide();
+      this.loadingService.hide();
     }, 2000);
+
+    // Tentar obter os dados do sessionStorage
+    const storedPortfolioItems = sessionStorage.getItem('portfolioItems');
+
+    // Se existirem dados armazenados, usar esses dados
+    if (storedPortfolioItems) {
+      const parsedPortfolioItems = JSON.parse(storedPortfolioItems);
+      if (parsedPortfolioItems.length > 0) {
+        this.portfolioItems = parsedPortfolioItems;
+      }
+    } else {
+      // Caso contrário, salvar os dados padrão no sessionStorage
+      sessionStorage.setItem(
+        'portfolioItems',
+        JSON.stringify(this.portfolioItems)
+      );
+      if (storedPortfolioItems) {
+        const parsedPortfolioItems = JSON.parse(storedPortfolioItems);
+        if (parsedPortfolioItems.length > 0) {
+          this.portfolioItems = parsedPortfolioItems;
+        }
+      }
+    }
+    this.currentIndex = 0;
+    console.log('Dados do portfólio:', this.portfolioItems);
   }
 
   @HostListener('window:scroll', ['$event'])
-onScroll(event: Event): void {
-  const header = this.el.nativeElement.querySelector('#header');
-  if (window.scrollY > 100) {
-    this.renderer.addClass(header, 'rolagem');
-  } else {
-    this.renderer.removeClass(header, 'rolagem');
-  }
-}
-
-handleRadioSelection(index: number) {
-  this.currentState = 'out'; // Inicia a animação de saída
-  setTimeout(() => {
-    this.currentIndex = index; // Atualiza o índice após a animação
-    this.currentState = 'in'; // Inicia a animação de entrada
-  }, 300); // Ajuste o tempo de acordo com a duração da animação
-}
-
-onSubmit(){
-  this.clearForm()
-}
-
-sendEmailMessage(){
-
-}
-
-sendWhatsAppMessage() {
-  const mensagem = `Heey me chamo *${this.nome}*.\nE-mail para contato: *${this.email}*\nTelefone para contato: *${this.telefone}*.\n\n*Entro em contato para falar sobre:*\n${this.mensagemUsuario}`;
-  const numeroTelefone = '5546999831857';
-  const linkWhatsapp = `https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${encodeURIComponent(mensagem)}`;
-  window.open(linkWhatsapp);
-  this.clearForm()
-}
-
-clearForm() {
-  if (this.contactForm) {
-    this.contactForm.reset();
-  }
-}
-
-toggleAnswer(perguntaClicada: any) {
-  this.faqLpaTech.forEach((pergunta) => {
-    if (pergunta !== perguntaClicada) {
-      pergunta.isClicked = false;
+  onScroll(event: Event): void {
+    const header = this.el.nativeElement.querySelector('#header');
+    if (window.scrollY > 100) {
+      this.renderer.addClass(header, 'rolagem');
+    } else {
+      this.renderer.removeClass(header, 'rolagem');
     }
-  });
+  }
 
-  perguntaClicada.isClicked = !perguntaClicada.isClicked;
-}
+  handleRadioSelection(index: number) {
+    this.currentState = 'out'; // Inicia a animação de saída
+    setTimeout(() => {
+      this.currentIndex = index; // Atualiza o índice após a animação
+      this.currentState = 'in'; // Inicia a animação de entrada
+    }, 300); // Ajuste o tempo de acordo com a duração da animação
+  }
+
+  onSubmit() {
+    this.clearForm();
+  }
+
+  sendEmailMessage() {
+    // Implemente conforme necessário
+  }
+
+  sendWhatsAppMessage() {
+    const mensagem = `Heey me chamo *${this.nome}*.\nE-mail para contato: *${this.email}*\nTelefone para contato: *${this.telefone}*.\n\n*Entro em contato para falar sobre:*\n${this.mensagemUsuario}`;
+    const numeroTelefone = '5546999831857';
+    const linkWhatsapp = `https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${encodeURIComponent(
+      mensagem
+    )}`;
+    window.open(linkWhatsapp);
+    this.clearForm();
+  }
+
+  clearForm() {
+    if (this.contactForm) {
+      this.contactForm.reset();
+    }
+  }
+
+  toggleAnswer(perguntaClicada: any) {
+    this.faqLpaTech.forEach((pergunta) => {
+      if (pergunta !== perguntaClicada) {
+        pergunta.isClicked = false;
+      }
+    });
+
+    perguntaClicada.isClicked = !perguntaClicada.isClicked;
+  }
 }
