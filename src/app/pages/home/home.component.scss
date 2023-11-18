@@ -1,29 +1,23 @@
-html,
-body {
+html,body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 img {
   user-select: none;
   user-zoom: none;
 }
-
 button {
   cursor: pointer !important;
 }
-
 .white-txt {
   color: #ffffff;
 }
-
 .btn-secundary-color {
   background-color: #e94b27;
   border-radius: 20px;
@@ -33,28 +27,23 @@ button {
   transition:
     background-color 0.2s,
     color 1s;
-
   a {
     text-decoration: none;
     color: inherit;
   }
 }
-
 .btn-secundary-color:hover {
   color: var(--secundary-color);
   background-color: var(--white-color);
 }
-
 .strong-secundary-color {
   color: var(--secundary-color);
 }
-
 .content {
   display: flex;
   align-items: center;
   background-color: #f5f5f5;
   padding: 10vh 30vh;
-
   .container {
     flex: 1;
     max-width: 800px;
@@ -63,20 +52,16 @@ button {
     margin-right: 2rem;
   }
 }
-
 //! HEADER
-
 .container-header {
   max-width: 1280px;
   margin: auto;
 }
-
 .flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 header {
   width: 100%;
   padding: 60px 4%;
@@ -85,62 +70,49 @@ header {
   left: 0;
   transition: 0.5s;
   z-index: 4;
-
   a:hover {
     color: #e94b27 !important;
     transition: color 0.3s ease;
   }
 }
-
 header.rolagem {
   background-color: #000000;
   padding: 20px 4%;
 }
-
 header img {
   max-height: 45px;
 }
-
 header ul {
   list-style-type: none;
 }
-
 header ul li {
   display: inline-block;
   margin: 0 30px;
 }
-
 header ul li a {
   color: #fff;
   text-decoration: none;
 }
-
 //! parallax
-
 .wrapper {
   width: 100%;
   margin: 0 auto;
 }
-
 main {
   display: block;
   background-color: var(--white-color);
 }
-
 section.module p {
   margin-bottom: 40px;
   font-family: "Roboto", sans-serif;
 }
-
 section.module:last-child {
   margin-bottom: 0;
 }
-
 section.module h1 {
   color: #ffffff;
   font-size: 40px;
 }
-
 div.container-parallax-txt {
   z-index: 3;
   width: 502px;
@@ -151,16 +123,13 @@ div.container-parallax-txt {
   flex-direction: column;
   margin-left: 16rem;
 }
-
 section.module h2 {
   margin-bottom: 40px;
   font-size: 30px;
 }
-
 section.module.content {
   background-color: #eeeeee;
 }
-
 section.module.parallax {
   display: flex;
   flex-direction: column;
@@ -177,7 +146,6 @@ section.module.parallax {
   -moz-background-size: cover;
   -o-background-size: cover;
 }
-
 div.shadow {
   content: "";
   width: 100%;
@@ -186,33 +154,26 @@ div.shadow {
   z-index: 2;
   background: rgba(0, 0, 0, 0.6);
 }
-
 section.module.parallax-1 {
   background-image: url("../../../assets/parallax-1.png");
 }
-
 .bar {
   height: 5px;
   width: 100%;
   background-color: var(--secundary-color);
 }
-
 //! proposito
-
 .proposito-text {
   margin-right: 3rem;
 }
-
 .video-institucional {
   border-radius: 2rem;
   max-height: 300px;
   outline: 6px solid var(--secundary-color);
 }
-
 .video {
   text-align: center;
 }
-
 @media screen and (max-width: 1500px) {
   .content {
     display: grid;
@@ -228,27 +189,21 @@ section.module.parallax-1 {
     }
   }
 }
-
 //! portifolio
-
 input[type="radio"] {
-  // Remova a bola azul padrão
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: 2px solid var(--secundary-color); // Adicione uma borda usando a cor secundária
-  border-radius: 50%; // Tornar o botão redondo
-  width: 20px; // Defina o tamanho desejado
-  height: 20px; // Defina o tamanho desejado
-  outline: none; // Remova o contorno padrão
+  border: 2px solid var(--secundary-color);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  outline: none;
   cursor: pointer;
-
-  // Adicione estilos ao botão de opção selecionado
   &:checked {
-    background-color: var(--secundary-color); // Preencha o botão de opção com a cor secundária
+    background-color: var(--secundary-color);
   }
 }
-
 .portfolio-section {
   .projects {
     display: flex;
@@ -257,7 +212,6 @@ input[type="radio"] {
     gap: 3rem;
     padding: 10vh 30vh;
     z-index: 3;
-
     .portfolio-description {
       flex: 2;
       padding: 20px;
@@ -269,7 +223,6 @@ input[type="radio"] {
       border-radius: 2rem;
       padding: 20px;
       background-color: var(--white-color);
-
       .portfolio-controls {
         display: flex;
         align-items: center;
@@ -277,11 +230,9 @@ input[type="radio"] {
         flex-direction: column;
       }
     }
-
     .portfolio-iphone {
       flex: 1;
       text-align: center;
-
       img {
         max-width: 100%;
         border-radius: 15px;
@@ -289,35 +240,28 @@ input[type="radio"] {
     }
   }
 }
-
 section.module.parallax-2 {
   background-image: url("../../../assets/parallax-2.svg");
 }
 //! Contact
-
 #contact {
   background-color: #f2f2f2;
   text-align: initial;
 }
-
 .contact-container {
   padding: 10vh 30vh;
   margin: 0 auto;
 }
-
 h2 {
   font-size: 24px;
   color: #333;
 }
-
 p {
   color: #666;
 }
-
 form {
   margin-top: 20px;
 }
-
 label {
   display: block;
   margin-bottom: 5px;
@@ -332,7 +276,6 @@ label {
     border: 1px solid #ccc;
     border-radius: 5px;
   }
-
   .green-btn {
     background-color: green;
     border-radius: 20px;
@@ -349,75 +292,68 @@ label {
       color: inherit;
     }
   }
-
   .green-btn:hover {
     color: green;
     background-color: var(--white-color);
   }
 }
-
 //! FAQ
-
 #faq {
   .faq-container {
     padding: 10vh 30vh;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 0.5fr;
-    align-items: center;
     gap: 2rem;
-
     .faq-div {
       flex: 2;
-
       .faq-group {
         border-radius: 16px;
         padding: 16px 24px;
         margin-bottom: 1rem;
-
         .pergunta {
           display: flex;
           align-items: center;
+          -webkit-user-select: none;
+          user-select: none;
         }
         .resposta {
           margin-top: 1rem;
-
           p {
             margin-bottom: 1rem;
             color: #ffffff;
           }
         }
       }
-
       .clicked {
         background-color: #e94b27 !important;
         color: #ffffff !important;
       }
-
       .faq-group:hover {
         background-color: #e94b27;
         color: #ffffff;
       }
     }
-
     .more-faq {
+      position: relative;
+      overflow: hidden;
       padding: 56px;
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      justify-content: center;
+      position: relative;
       background-color: #e8e8e8;
       border-radius: 16px;
-      position: relative;
-
       .background {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-size: cover; /* ou contain, dependendo do comportamento desejado */
+        background-size: cover;
       }
       .conteudo {
         display: flex;
@@ -425,6 +361,9 @@ label {
         align-items: center;
         text-align: center;
         z-index: 1;
+        button{
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        }
         .faq-avatar {
           width: 90px;
           height: 90px;
@@ -434,60 +373,108 @@ label {
           display: flex;
           overflow: hidden;
           margin-bottom: 1rem;
-
+          outline: solid 0.4rem;
+          outline-style: outset;
+          outline-color: #e94b27;
           img {
             max-width: 100%;
           }
         }
       }
-    }
 
-    defs clipPath {
-      rect {
-        width: 100%;
-        height: 100%;
-        fill: white;
+    }
+  }
+}
+@media screen and (max-width: 1500px) {
+  .faq-container{
+    grid-template-columns: none !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  div.container-parallax-txt{
+    margin-left: 0rem;
+  }
+  section.module.parallax{
+    align-items: center;
+  }
+  .content{
+    padding: 10vh 10vh;
+  }
+  .portfolio-section{
+    .projects{
+      padding: 10vh 10vh;
+      flex-direction: column;
+      .portfolio-iphone{
+        img{
+          max-height: 25rem;
+        }
       }
     }
-
-    // .more-faq {
-    //   position: relative;
-    //   align-items: center;
-    //   padding: 56px;
-    //   flex: 1;
-    //   display: flex;
-    //   flex-direction: column;
-    //   text-align: center;
-    //   background-color: #e8e8e8;
-    //   border-radius: 16px;
-    // }
-
-    // .background {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-size: cover; /* ou contain, dependendo do comportamento desejado */
-    // }
-
-    // .conteudo {
-    //   z-index: 1; /* Garante que o conteúdo apareça sobreposta ao fundo */
-    // }
-
-    // .faq-avatar {
-    //   width: 90px;
-    //   height: 90px;
-    //   border-radius: 999px;
-    //   justify-content: center;
-    //   align-items: center;
-    //   display: flex;
-    //   overflow: hidden;
-    //   margin-bottom: 1rem;
-
-    //   img {
-    //     max-width: 100%;
-    //   }
-    // }
+  }
+  #contact{
+    .contact-container{
+      padding: 10vh 10vh;
+    }
+  }
+  #faq{
+    .faq-container{
+      padding: 10vh 10vh;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  header{
+    img{
+      max-width: 170px;
+    }
+    ul{
+      display: none;
+    }
+  }
+  div.container-parallax-txt{
+    margin-left: 0rem;
+    width: auto;
+    padding: 0rem 2rem;
+  }
+  section.module.parallax-1{
+    align-items: center;
+    height: 120vh !important;
+  }
+  section.module.parallax-2{
+    align-items: center;
+    height: 150vh !important;
+  }
+  .content{
+    padding: 4vh;
+  }
+  .portfolio-section{
+    .projects{
+      padding: 2vh;
+      flex-direction: column;
+      .portfolio-iphone{
+        img{
+          max-height: 25rem;
+        }
+      }
+    }
+  }
+  #contact{
+    .contact-container{
+      padding: 8vh 2vh;
+      .botoes{
+        display: flex;
+      }
+    }
+  }
+  #faq{
+    .faq-container{
+      padding: 8vh 2vh;
+    }
+  }
+}
+@media screen and (max-width: 300px) {
+  section.module.parallax-2{
+    align-items: center;
+    height: 200vh !important;
   }
 }
