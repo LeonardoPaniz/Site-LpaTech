@@ -91,8 +91,10 @@
 
             <label for="message">Mensagem:</label>
             <textarea id="message" name="message" placeholder="Descreva objetivamente o motivo do contato." [(ngModel)]="mensagemUsuario" required></textarea>
-            <a (click)="sendEmailMessage()"><button class="btn-secundary-color" type="submit">Enviar email</button></a>
-            <a (click)="sendWhatsAppMessage()"><button class="green-btn" type="submit">Chamar no WhatsApp</button></a>
+            <div class="botoes">
+              <a (click)="sendEmailMessage()" target="_blank" href="mailto:leonardopaniz@outlook.com"><button class="btn-secundary-color" type="submit">Enviar email</button></a>
+              <a (click)="sendWhatsAppMessage()"><button class="green-btn" type="submit">Chamar no WhatsApp</button></a>
+            </div>
           </form>
         </div>
       </section>
@@ -104,9 +106,6 @@
             <div class="faq-group" *ngFor="let pergunta of faqLpaTech" (click)="toggleAnswer(pergunta)" [class.clicked]="pergunta.isClicked">
               <div class="pergunta">
                 <h3>{{pergunta.pergunta}}</h3>
-                <!-- <div class="icon-container">
-                  <ion-icon name="add-outline"></ion-icon>
-                </div> -->
               </div>
               <div class="resposta" *ngIf="pergunta.isClicked == true">
                 <p class="answer txt_faq">{{ pergunta.resposta }}</p>
@@ -138,14 +137,9 @@
         </div>
       </section>
 
-      <a href="https://www.instagram.com/share?url=https://lpatech.com.br/homeE&caption=Sua+legenda+aqui&media=https://img.freepik.com/fotos-premium/o-ceu-da-paisagem-do-arco-iris-refletiu-a-imagem-de-fundo-da-natureza-da-agua-ai-gerou-a-arte_856480-1354.jpg" target="_blank">Compartilhar no Instagram</a>
-
 
 
     </main>
   </div>
-
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
