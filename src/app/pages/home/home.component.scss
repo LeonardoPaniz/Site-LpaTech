@@ -436,6 +436,9 @@ label {
     width: auto;
     padding: 0rem 2rem;
   }
+  section.module.parallax{
+  background-attachment:scroll;
+  }
   section.module.parallax-1{
     align-items: center;
     height: 120vh !important;
