@@ -168,11 +168,25 @@ export class HomeComponent implements OnInit {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-    console.log("menu", this.isMenuOpen);
-
+    const body = document.querySelector('body');
+    if (body) {
+      body.classList.toggle('no-scroll', this.isMenuOpen);
+    }
+    const overlay = document.querySelector('.overlay');
+    if (overlay) {
+      overlay.classList.toggle('active', this.isMenuOpen);
+    }
   }
   closeMenu() {
     this.isMenuOpen = false;
+    const body = document.querySelector('body');
+    if (body) {
+      body.classList.remove('no-scroll');
+    }
+    const overlay = document.querySelector('.overlay');
+    if (overlay) {
+      overlay.classList.remove('active');
+    }
   }
 
   scrollToContact() {

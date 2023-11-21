@@ -8,10 +8,11 @@
   <title>Home</title>
 </head>
 
-<body>
+<body [ngClass]="{'no-scroll': isMenuOpen}">
   <div class="wrapper">
     <main>
       <section id="inicio" class="module parallax parallax-1">
+        <div class="overlay" [ngClass]="{'active': isMenuOpen}" (click)="closeMenu()"></div>
         <header id="header">
           <div class="container-header">
             <div class="flex">
@@ -25,7 +26,7 @@
                   </button>
                 </div>
                 <ul [ngClass]="{'open': isMenuOpen}">
-                  <li>
+                  <li *ngIf="screenWidth < 1000" >
                     <button class="hamburger" (click)="toggleMenu()">
                       <div id="bar1" class="bar"></div>
                       <div id="bar2" class="bar"></div>
