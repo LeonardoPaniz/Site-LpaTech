@@ -157,7 +157,7 @@
 // }
 // }
 
-import { LoadingService } from './../../service/loading.service';
+import { LoadingService } from '../../service/loading/loading.service';
 import {
   Component,
   HostListener,
@@ -174,6 +174,7 @@ import {
   animate,
 } from '@angular/animations';
 import { NgForm } from '@angular/forms';
+import { ScrollService } from 'src/app/service/scroll/scroll.service';
 
 @Component({
   selector: 'app-root',
@@ -199,6 +200,7 @@ export class HomeComponent implements OnInit {
   email: string = '';
   telefone: string = '';
   mensagemUsuario: string = '';
+  isMenuOpen = false;
 
   portfolioItems: any[] = [
     {
@@ -268,10 +270,15 @@ export class HomeComponent implements OnInit {
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private scrollService: ScrollService,
   ) { }
 
   ngOnInit(): void {
+    this.scrollService.addSmoothScrolling();
+    window.onload = function () {
+      var cor: string = "#E94B27";
+      document.body.style.backgroundColor = cor;}
     this.loadingService.show();
     setTimeout(() => {
       this.loadingService.hide();
@@ -293,9 +300,7 @@ export class HomeComponent implements OnInit {
         }
       }
     }else {
-      // Caso contrário, salvar os dados padrão no sessionStorage
-      sessionStorage.setItem('portfolioItems',JSON.stringify(this.portfolioItems)
-      );
+      sessionStorage.setItem('portfolioItems',JSON.stringify(this.portfolioItems));
       const storedPortfolioItems = sessionStorage.getItem('portfolioItems');
       if (storedPortfolioItems) {
         const parsedPortfolioItems = JSON.parse(storedPortfolioItems);
@@ -317,6 +322,18 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  scrollToContact() {
+    const targetElement = this.el.nativeElement.querySelector('#contact');
+
+    if (targetElement) {
+      this.scrollService.scrollTo(targetElement);
+    }
+  }
+
   handleRadioSelection(index: number) {
     this.currentState = 'out'; // Inicia a animação de saída
     setTimeout(() => {
@@ -330,7 +347,7 @@ export class HomeComponent implements OnInit {
   }
 
   sendEmailMessage() {
-    // Implemente conforme necessário
+    window.location.href = 'mailto:suporte@lpatech.com.br'
   }
 
   sendWhatsAppMessage() {

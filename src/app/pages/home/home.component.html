@@ -9,17 +9,18 @@
 <body>
   <div class="wrapper">
     <main>
-      <section class="module parallax parallax-1">
+      <section id="inicio" class="module parallax parallax-1">
         <header id="header">
           <div class="container-header">
             <div class="flex">
               <a href="#"><img src="../assets/logo.png" alt="LPA-TECH | Soluções digitais."></a>
               <nav>
                 <ul>
-                  <li><a href="#">HOME</a></li>
-                  <li><a href="#">PROPÓSITO</a></li>
-                  <li><a href="#">PORTIFÓLIO</a></li>
-                  <li><a href="#">CONTATO</a></li>
+                  <li><a href="#inicio">HOME</a></li>
+                  <li><a href="#proposito">PROPÓSITO</a></li>
+                  <li><a href="#portfolio">PORTIFÓLIO</a></li>
+                  <li><a href="#contact">CONTATO</a></li>
+                  <li><a href="#faq">FAQ</a></li>
                 </ul>
               </nav>
             </div>
@@ -29,21 +30,20 @@
           <h1 class="h1-parallax">Bem vindo a LPA-TECH | <strong class="strong-secundary-color">Soluções
               digitais.</strong></h1>
           <p class="white-txt">Bem-vindo à LPA-TECH, explore nossas inovações e juntos vamos transformar o mundo.</p>
-          <a href="https://api.whatsapp.com/send?phone=46999831857"><button class="btn-secundary-color">Fazer orçamento</button></a>
+          <a (click)="scrollToContact()"><button class="btn-secundary-color">Fazer orçamento</button></a>
         </div>
         <div class="shadow"></div>
       </section>
 
-      <section class="module content">
+      <section id="proposito" class="module content">
         <div class="proposito-text">
           <h2><strong class="strong-secundary-color">NOSSO PROPÓSITO</strong></h2>
           <p>
-            Na LPA Tech acreditamos que a tecnologia é uma ferramenta poderosa para impulsionar o crescimento e o sucesso dos negócios. Com anos de experiência no setor de desenvolvimento web e de software nos dedicamos a criar soluções, sob medida, para atender as necessidades únicas de nossos clientes.
-
+            Somos a LPA-TECH, uma turma apaixonada por inovação e determinada a impulsionar a presença online dos negócios do Brasil. Apesar de sermos novos nesse jogo, nossa galera está pronta para transformar suas ideias em experiências digitais incríveis. A gente manda ver na criação de websites pois sabemos que a presença online é mega importante, e nossa missão é deixar essa presença única.
             <br>
             <br>
-
-            Nossa equipe é formada por desenvolvedores, designers e especialistas em tecnologia apaixonados por inovação e excelência. Trabalhamos em estreita colaboração com nossos clientes para entender suas metas e fornecer soluções personalizadas que atendam as suas expectativas e superem suas necessidades.
+            O coração da LPA-TECH bate forte pela inovação. Nosso lema é simples, mas é poderoso:<strong>Somos a vanguarda da excelência criativa</strong>. Isso não é só nos nossos projetos, mas também no nosso estilo.
+            Bora com a gente nessa jornada de revolucionar a criação digital? Na LPA-TECH, não estamos só fazendo sites; a parada é construir pontes digitais que conectam os negócios ao mundo online, mostrando o que tem de melhor no Brasil.
           </p>
           <a target="_blank" href="https://github.com/LeonardoEnterprise"><button class="btn-secundary-color">Conhecer a empresa</button></a>
           </div>
@@ -53,7 +53,7 @@
           </div>
       </section>
 
-      <section class="portfolio-section module parallax parallax-2">
+      <section id="portfolio" class="portfolio-section module parallax parallax-2">
         <div class="projects">
             <div class="portfolio-iphone" [@contentChange]="currentState">
               <img [src]="portfolioItems[currentIndex].screenshot" alt="Screenshot do site">
@@ -92,8 +92,7 @@
             <label for="message">Mensagem:</label>
             <textarea id="message" name="message" placeholder="Descreva objetivamente o motivo do contato." [(ngModel)]="mensagemUsuario" required></textarea>
             <div class="botoes">
-              <a (click)="sendEmailMessage()" target="_blank" href="mailto:leonardopaniz@outlook.com"><button class="btn-secundary-color" type="submit">Enviar email</button></a>
-              <a (click)="sendWhatsAppMessage()"><button class="green-btn" type="submit">Chamar no WhatsApp</button></a>
+              <a (click)="sendWhatsAppMessage()"><button class="btn-secundary-color" type="submit">Chamar no WhatsApp</button></a>
             </div>
           </form>
         </div>
@@ -131,13 +130,13 @@
                 <img src="../../../assets/faq-avatar.jpg" alt="Atendimento Whatsapp">
               </div>
               <h2>Vamos trabalhar juntos?</h2>
-                <a href=""><button class="btn-secundary-color">Vamos juntos!</button></a>
+                <a target="_blank" href="https://wa.me/message/OVDXUUDFWEHCJ1"><button class="btn-secundary-color">Vamos juntos!</button></a>
             </div>
           </div>
         </div>
       </section>
 
-
+      <app-footer></app-footer>
 
     </main>
   </div>

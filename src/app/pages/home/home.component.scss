@@ -52,6 +52,10 @@ button {
     margin-right: 2rem;
   }
 }
+
+strong{
+  color: var(--secundary-color);
+}
 //! HEADER
 .container-header {
   max-width: 1280px;
@@ -391,6 +395,11 @@ label {
   }
 }
 @media screen and (max-width: 1000px) {
+  nav{
+    ul{
+      display: none;
+    }
+  }
   div.container-parallax-txt{
     margin-left: 0rem;
   }
@@ -422,6 +431,11 @@ label {
     }
   }
 }
+@media screen and (max-width: 700px) {
+  section.module.parallax-2{
+    height: 115vh !important;
+  }
+}
 @media screen and (max-width: 500px) {
   header{
     img{
@@ -445,7 +459,7 @@ label {
   }
   section.module.parallax-2{
     align-items: center;
-    height: 150vh !important;
+    height: 130vh !important;
   }
   .content{
     padding: 4vh;

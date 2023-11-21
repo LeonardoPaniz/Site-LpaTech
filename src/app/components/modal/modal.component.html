@@ -1,0 +1,8 @@
+<div class="modal">
+  <div class="modal-overlay" *ngIf="modalService.modalVisible" (click)="closeModal()"></div>
+  <div class="modal-content">
+    <h2>{{ modalTitle }}</h2>
+    <div class="modal-body" [innerHTML]="modalContent"></div>
+    <button style="background-color: var(--secundary-color);" (click)="closeModal()">Concordo</button>
+  </div>
+</div>
