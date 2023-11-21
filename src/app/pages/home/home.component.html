@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#E94B27">
   <title>Home</title>
 </head>
 
@@ -15,12 +17,26 @@
             <div class="flex">
               <a href="#"><img src="../assets/logo.png" alt="LPA-TECH | Soluções digitais."></a>
               <nav>
-                <ul>
-                  <li><a href="#inicio">HOME</a></li>
-                  <li><a href="#proposito">PROPÓSITO</a></li>
-                  <li><a href="#portfolio">PORTIFÓLIO</a></li>
-                  <li><a href="#contact">CONTATO</a></li>
-                  <li><a href="#faq">FAQ</a></li>
+                <div class="button-menu" *ngIf="screenWidth < 1000">
+                  <button class="hamburger" (click)="toggleMenu()">
+                    <div id="bar1" class="bar"></div>
+                    <div id="bar2" class="bar"></div>
+                    <div id="bar3" class="bar"></div>
+                  </button>
+                </div>
+                <ul [ngClass]="{'open': isMenuOpen}">
+                  <li>
+                    <button class="hamburger" (click)="toggleMenu()">
+                      <div id="bar1" class="bar"></div>
+                      <div id="bar2" class="bar"></div>
+                      <div id="bar3" class="bar"></div>
+                    </button>
+                  </li>
+                  <li><a (click)="closeMenu()" href="#inicio">HOME</a></li>
+                  <li><a (click)="closeMenu()" href="#proposito">PROPÓSITO</a></li>
+                  <li><a (click)="closeMenu()" href="#portfolio">PORTIFÓLIO</a></li>
+                  <li><a (click)="closeMenu()" href="#contact">CONTATO</a></li>
+                  <li><a (click)="closeMenu()" href="#faq">FAQ</a></li>
                 </ul>
               </nav>
             </div>
@@ -39,30 +55,39 @@
         <div class="proposito-text">
           <h2><strong class="strong-secundary-color">NOSSO PROPÓSITO</strong></h2>
           <p>
-            Somos a LPA-TECH, uma turma apaixonada por inovação e determinada a impulsionar a presença online dos negócios do Brasil. Apesar de sermos novos nesse jogo, nossa galera está pronta para transformar suas ideias em experiências digitais incríveis. A gente manda ver na criação de websites pois sabemos que a presença online é mega importante, e nossa missão é deixar essa presença única.
+            Somos a LPA-TECH, uma turma apaixonada por inovação e determinada a impulsionar a presença online dos
+            negócios do Brasil. Apesar de sermos novos nesse jogo, nossa galera está pronta para transformar suas ideias
+            em experiências digitais incríveis. A gente manda ver na criação de websites pois sabemos que a presença
+            online é mega importante, e nossa missão é deixar essa presença única.
             <br>
             <br>
-            O coração da LPA-TECH bate forte pela inovação. Nosso lema é simples, mas é poderoso:<strong>Somos a vanguarda da excelência criativa</strong>. Isso não é só nos nossos projetos, mas também no nosso estilo.
-            Bora com a gente nessa jornada de revolucionar a criação digital? Na LPA-TECH, não estamos só fazendo sites; a parada é construir pontes digitais que conectam os negócios ao mundo online, mostrando o que tem de melhor no Brasil.
+            O coração da LPA-TECH bate forte pela inovação. Nosso lema é simples, mas é poderoso:<strong>Somos a
+              vanguarda da excelência criativa</strong>. Isso não é só nos nossos projetos, mas também no nosso estilo.
+            Bora com a gente nessa jornada de revolucionar a criação digital? Na LPA-TECH, não estamos só fazendo sites;
+            a parada é construir pontes digitais que conectam os negócios ao mundo online, mostrando o que tem de melhor
+            no Brasil.
           </p>
-          <a target="_blank" href="https://github.com/LeonardoEnterprise"><button class="btn-secundary-color">Conhecer a empresa</button></a>
-          </div>
-          <div class="video">
-            <!-- <img class="valores" src="../../../assets/lema.svg" alt="Você é nossa prioridade!"> -->
-            <video class="video-institucional" src="../../../assets/LPA MOVIE.mp4" alt="Conheça a LPA-TECH" controls></video>
-          </div>
+          <a target="_blank" href="https://github.com/LeonardoEnterprise"><button class="btn-secundary-color">Conhecer a
+              empresa</button></a>
+        </div>
+        <div class="video">
+          <!-- <img class="valores" src="../../../assets/lema.svg" alt="Você é nossa prioridade!"> -->
+          <video class="video-institucional" src="../../../assets/LPA MOVIE.mp4" alt="Conheça a LPA-TECH"
+            controls></video>
+        </div>
       </section>
 
       <section id="portfolio" class="portfolio-section module parallax parallax-2">
         <div class="projects">
-            <div class="portfolio-iphone" [@contentChange]="currentState">
-              <img [src]="portfolioItems[currentIndex].screenshot" alt="Screenshot do site">
-            </div>
-            <div class="portfolio-description" >
+          <div class="portfolio-iphone" [@contentChange]="currentState">
+            <img [src]="portfolioItems[currentIndex].screenshot" alt="Screenshot do site">
+          </div>
+          <div class="portfolio-description">
             <div class="content-portfolio" [@contentChange]="currentState">
               <h2><strong class="strong-secundary-color">{{ portfolioItems[currentIndex].title }}</strong></h2>
               <p>{{ portfolioItems[currentIndex].description }}</p>
-              <a target="_blank" href="{{portfolioItems[currentIndex].url}}"><button class="btn-secundary-color">Visitar o site</button></a>
+              <a target="_blank" href="{{portfolioItems[currentIndex].url}}"><button class="btn-secundary-color">Visitar
+                  o site</button></a>
             </div>
             <div class="portfolio-controls">
               <label *ngFor="let item of portfolioItems; let i = index">
@@ -75,10 +100,11 @@
       </section>
 
 
-      <section id="contact" class="module" >
+      <section id="contact" class="module">
         <div class="contact-container">
           <h2><strong class="strong-secundary-color">ENTRE EM CONTATO</strong></h2>
-          <p>Estamos ansiosos para atendê-lo. Deixe-nos ajudar a transformar suas necessidades em <strong>soluções</strong></p>
+          <p>Estamos ansiosos para atendê-lo. Deixe-nos ajudar a transformar suas necessidades em
+            <strong>soluções</strong></p>
           <form id="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm" method="post">
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" placeholder="Nome Sobrenome" [(ngModel)]="nome" required>
@@ -87,12 +113,15 @@
             <input type="email" id="email" name="email" placeholder="Usuario@email.com" [(ngModel)]="email" required>
 
             <label for="cell">Telefone:</label>
-            <input type="tel" id="cell" name="cell" placeholder="DDD+Numero Do Telefone" [(ngModel)]="telefone" required>
+            <input type="tel" id="cell" name="cell" placeholder="DDD+Numero Do Telefone" [(ngModel)]="telefone"
+              required>
 
             <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" placeholder="Descreva objetivamente o motivo do contato." [(ngModel)]="mensagemUsuario" required></textarea>
+            <textarea id="message" name="message" placeholder="Descreva objetivamente o motivo do contato."
+              [(ngModel)]="mensagemUsuario" required></textarea>
             <div class="botoes">
-              <a (click)="sendWhatsAppMessage()"><button class="btn-secundary-color" type="submit">Chamar no WhatsApp</button></a>
+              <a (click)="sendWhatsAppMessage()"><button class="btn-secundary-color" type="submit">Chamar no
+                  WhatsApp</button></a>
             </div>
           </form>
         </div>
@@ -102,7 +131,8 @@
         <div class="faq-container">
           <div class="faq-div">
             <h2><strong class="strong-secundary-color">ALGUMA DÚVIDA?</strong></h2>
-            <div class="faq-group" *ngFor="let pergunta of faqLpaTech" (click)="toggleAnswer(pergunta)" [class.clicked]="pergunta.isClicked">
+            <div class="faq-group" *ngFor="let pergunta of faqLpaTech" (click)="toggleAnswer(pergunta)"
+              [class.clicked]="pergunta.isClicked">
               <div class="pergunta">
                 <h3>{{pergunta.pergunta}}</h3>
               </div>
@@ -116,7 +146,9 @@
               <svg viewBox="0 0 488 484" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_512_15987)">
                   <rect width="488" height="484" fill="none"></rect>
-                  <path d="M-91.7745 446.06C18.5296 427.936 216.274 332.515 124.817 95.8259C10.4968 -200.036 -268.195 116.236 -5.56262 203.74C257.07 291.243 614.6 -242.98 306.391 -721.557" stroke="#e94b27" stroke-width="18"></path>
+                  <path
+                    d="M-91.7745 446.06C18.5296 427.936 216.274 332.515 124.817 95.8259C10.4968 -200.036 -268.195 116.236 -5.56262 203.74C257.07 291.243 614.6 -242.98 306.391 -721.557"
+                    stroke="#e94b27" stroke-width="18"></path>
                 </g>
                 <defs>
                   <clipPath id="clip0_512_15987">
@@ -130,15 +162,15 @@
                 <img src="../../../assets/faq-avatar.jpg" alt="Atendimento Whatsapp">
               </div>
               <h2>Vamos trabalhar juntos?</h2>
-                <a target="_blank" href="https://wa.me/message/OVDXUUDFWEHCJ1"><button class="btn-secundary-color">Vamos juntos!</button></a>
+              <a target="_blank" href="https://wa.me/message/OVDXUUDFWEHCJ1"><button class="btn-secundary-color">Vamos
+                  juntos!</button></a>
             </div>
           </div>
         </div>
       </section>
-
       <app-footer></app-footer>
-
     </main>
   </div>
 </body>
+
 </html>
