@@ -55,3 +55,6 @@ Sua contribuição é bem-vinda! Se você encontrar problemas ou tiver sugestõe
 Agradecemos por fazer parte do desenvolvimento do site da LPA-TECH!
 
 **Equipe de Desenvolvimento da LPA-TECH**
+
+![lpatech-site netlify app_home (1)](https://github.com/user-attachments/assets/fc63c8ef-28d5-47c1-bc74-eba0bd1ecabe)
+
